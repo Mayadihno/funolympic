@@ -1,0 +1,87 @@
+.medal{
+    margin: 40px 0;
+}
+.medal__content{
+    width: 90%;
+    margin: auto;
+    padding-top: 10px;
+}
+.medal__flex{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.img__medal img{
+    width: 350px;
+}
+.medal__image{
+    width: 800px;
+}
+.medal__text{
+    color: black;
+    margin-left: 20px;
+}
+.medal__text h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+.medal__text p{
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+section{
+    margin: 40px 0px;
+    background-color: #F0282D;
+    width: 100%;
+}
+.section__background{
+   width: 85%;
+   margin: auto;
+}
+.section__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section__image{
+    width: 1200px;
+    height: 600px;
+}
+.section__text{
+    margin-left: 30px;
+    
+}
+.section__text h4{
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+.section__text p{
+    font-size: 15px;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width:760px) {
+    .medal__flex{
+        display: flex;
+        flex-direction: column;
+    }
+    .medal__image{
+        width: 370px;
+        padding-bottom: 20px;
+    }
+    .medal__text button{
+        width: 300px;
+    }
+    .section__flex{
+        display: flex;
+       flex-direction: column-reverse;
+    }
+    .section__image{
+        width: 400px;
+       
+    }
+}

@@ -1,0 +1,40 @@
+.fixtures{
+    margin: 30px 0;
+}
+.fixtures__content{
+    width: 90%;
+    margin: auto;
+}
+.fixtures__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.card-grid img{
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.features__text{
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+@media screen and (max-width:760px) {
+    .fixtures__content{
+        width: 95%;
+        margin: auto;
+    }
+    .fixtures__grid{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+    }
+}

@@ -1,0 +1,46 @@
+.fixturesData{
+    margin-top: 125px;
+}
+.fixturesData__content{
+    width: 85%;
+    margin: auto;
+}
+.heading h4{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    line-height: 30px;
+    padding-top: 40px;
+}
+.fixturesData__flex{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.card-grid img {
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.card-grid p{
+    font-size: 13px;
+    line-height: 30px;
+    padding: 5px 0px;
+}
+@media screen and (max-width:760px) {
+    .fixturesData{
+        margin-top: 105px;
+    }
+    .fixturesData__flex{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .fixturesData__content{
+        width: 95%;
+        margin: auto;
+    }
+}

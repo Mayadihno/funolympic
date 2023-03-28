@@ -1,0 +1,53 @@
+.local{
+    margin: 20px 0;
+    color: black;
+}
+.local__content{
+    width: 90%;
+    margin: auto;
+}
+.local__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.local__image img{
+    width: 500px;
+    height: 420px;
+    object-fit: cover;
+}
+.local__form{
+    background-color: black;
+    padding: 40px 100px;
+    color: white;
+}
+.local__form form input{
+    width: 500px;
+}
+.local__form h2{
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 25px;
+}
+.local__form .button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media screen and (max-width:760px) {
+    .local__flex{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .local__content{
+        width: 100%;
+    }
+    .local__form{
+        padding: 10px !important;
+        margin: 20px 0px;
+    }
+    .local__form form input{
+        width: 350px !important;
+        margin: 10px auto 5px auto !important;
+    }
+}

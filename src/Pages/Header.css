@@ -1,0 +1,39 @@
+.header{
+    background-image: url('../assets/pexels-pixabay-236937.jpg');
+    min-width: 100% !important;
+    height: 70vh;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center bottom;
+    position: relative;
+}
+.header__content{
+    position: absolute;
+    margin: auto;
+    right: 10px;
+    top: 150px;
+    /* margin-right: 20px; */
+}
+.header__content h3{
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    width: 80%;
+    margin: auto;
+}
+.header__content .buttons{
+    text-align: center;
+    margin-top: 30px;
+}
+.header__content .buttons button{
+    margin: 0 20px;
+}
+@media screen and (max-width:760px) {
+    .header{
+        background-position: center left;
+        height: 65vh;
+    }
+    .header__content .buttons button:nth-child(odd){
+       margin-bottom: 30px;
+    }
+}

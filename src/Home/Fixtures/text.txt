@@ -1,0 +1,160 @@
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  Image,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTrigger,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
+import React, { useEffect, useRef, useState } from "react";
+import { db } from "../../../firebase/firebase";
+
+const image =
+  "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
+const Football = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [football, setFootball] = useState([]);
+  const [show, setShow] = useState(false);
+  const initRef = useRef();
+
+  const getCategories = async () => {
+    const collectionRef = collection(db, "fixtures");
+    const q = query(
+      collectionRef,
+      where("categories", "==", "Football"),
+      orderBy("id", "desc")
+    );
+    const querySnapshot = await getDocs(q);
+    const queryData = querySnapshot.docs.map((doc) => doc.data());
+    setFootball(queryData);
+  };
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+  const handleClick = () => {
+    setShow(!show);
+  };
+
+  const fixture1 = football[0]?.matchFixtures;
+  const fixture2 = football[1]?.matchFixtures;
+  const fixture3 = football[2]?.matchFixtures;
+  const fixture4 = football[3]?.matchFixtures;
+  const fixture5 = football[4]?.matchFixtures;
+  const fixture6 = football[5]?.matchFixtures;
+  const fixture7 = football[6]?.matchFixtures;
+
+  return (
+    <React.Fragment>
+      <div className="football">
+        <Card maxW="md" className="card__bg">
+          <Image
+            objectFit="cover"
+            src={image}
+            alt="SportImage"
+            position={"relative"}
+          />
+          <CardBody>
+            <Box>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "20px",
+                  left: "20px",
+                  backgroundColor: "black",
+                  color: "white",
+                  padding: "5px 15px",
+                  borderRadius: "10px",
+                }}
+              >
+                <h4
+                  style={{
+                    textTransform: "uppercase",
+                    fontWeight: "500",
+                    color: "white",
+                  }}
+                >
+                  {/* {football.matchTitle} */}
+                </h4>
+              </div>
+              <Popover
+                closeOnEsc
+                placement="left"
+                initialFocusRef={initRef}
+                style={{
+                  backgroundColor: "red",
+                  color: "white",
+                }}
+                // className="card__bg"
+              >
+                {({ onClose }) => (
+                  <>
+                    <PopoverTrigger>
+                      <Button colorScheme={"red"}>See Fixtures</Button>
+                    </PopoverTrigger>
+                    <PopoverContent
+                      style={{
+                        backgroundColor: "#2D3748",
+                        color: "white",
+                        marginLeft: "30px",
+                        padding: "5px 20px",
+                      }}
+                    >
+                      <PopoverArrow />
+                      <PopoverCloseButton />
+                      <PopoverHeader>Today Fixtures</PopoverHeader>
+                      <PopoverBody
+                        fontSize={13}
+                        style={{
+                          padding: "10px 0px",
+                          lineHeight: "30px",
+                          fontSize: "15px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <ul>
+                          {!show && "This Match is Not yet Streaming"}
+                          <li onClick={handleClick}>{fixture1}</li>
+                          <li onClick={handleClick}>{fixture2}</li>
+                          <li onClick={handleClick}>{fixture3}</li>
+                          <li onClick={handleClick}>{fixture4}</li>
+                          <li onClick={handleClick}>{fixture5}</li>
+                          <li onClick={handleClick}>{fixture6}</li>
+                          <li onClick={handleClick}>{fixture7}</li>
+                        </ul>
+                      </PopoverBody>
+                      <PopoverFooter display="flex" justifyContent="flex-end">
+                        <ButtonGroup size="sm">
+                          <Button
+                            variant="outline"
+                            onClick={onClose}
+                            ref={initRef}
+                          >
+                            Close
+                          </Button>
+                        </ButtonGroup>
+                      </PopoverFooter>
+                    </PopoverContent>
+                  </>
+                )}
+              </Popover>
+            </Box>
+          </CardBody>
+        </Card>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default Football;

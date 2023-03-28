@@ -1,0 +1,73 @@
+.news{
+    margin-top: 30px;
+}
+.news__content{
+    width: 90%;
+    margin: auto;
+}
+.news__heading{
+    padding: 20px 0px;
+}
+.news__heading h3{
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    text-transform: capitalize;
+}
+.news__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+ .link p{
+    padding-bottom: 10px;
+    color: gray;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.newsImage:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    -webkit-transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    -moz-transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    -ms-transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    -o-transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.news__content .content p{
+    font-size: 14px;
+    line-height: 30px;
+}
+.newsBody h4{
+    color: cyan;
+}
+.newsBody h4:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.newsBody h5{
+    color: grey;
+}
+.swipperClass{
+    display: none;
+}
+@media screen and (max-width:760px) {
+    .news__grid{
+        display: none;
+    }
+    .swipperClass{
+        display: block;
+       
+    }
+    .cardSlide{
+        margin-bottom: 30px !important;
+    }
+}
