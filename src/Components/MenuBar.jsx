@@ -21,7 +21,7 @@ const MenuBar = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const userEmail = user.phoneNumber === "+447774614335";
+        const userEmail = user.phoneNumber === "+2348136908207";
         //"+447774614335"
         setAdmin(userEmail);
         setPageState(true);

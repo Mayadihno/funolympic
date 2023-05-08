@@ -97,9 +97,9 @@ const PhoneAuth = () => {
                   {/* 7774614335 */}
                   <div className="phone__input">
                     <PhoneInput
-                      country="gb"
+                      country="ng "
                       enableAreaCodes={true}
-                      onlyCountries={["gb"]}
+                      onlyCountries={["ng"]}
                       preserveOrder={["onlyCountries", "preferredCountries"]}
                       value={phoneNumber}
                       onChange={setPhoneNumber}
