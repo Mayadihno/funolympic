@@ -83,7 +83,12 @@ const AddAdmin = () => {
                   variant="outline"
                 />
               </div>
-              <Button sx={{ mt: "13px" }} type="submit" variant={"solid"}>
+              <Button
+                sx={{ mt: "13px" }}
+                type="submit"
+                variant={"solid"}
+                colorScheme="messenger"
+              >
                 Add Admin
               </Button>
             </form>
