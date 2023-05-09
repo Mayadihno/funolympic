@@ -20,32 +20,33 @@ import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import AddAdmin from "./AddAdmin";
 
 const Admin = () => {
   const [data, setData] = useState([]);
-  const [admin, setAdmin] = useState(
-    Array.from({ length: data.length }).fill(false)
-  );
-  const collectionRef = collection(db, "users");
+  // const [admin, setAdmin] = useState(
+  //   Array.from({ length: data.length }).fill(false)
+  // );
+  const collectionRef = collection(db, "admin");
   const navigate = useNavigate();
 
   const getData = async () => {
     const data = await getDocs(collectionRef);
     setData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
-  const handleAdmin = (id) => {
-    setAdmin((prevState) => {
-      const tutorsArr = [...prevState];
-      tutorsArr[id] = !tutorsArr[id];
-      return tutorsArr;
-    });
-  };
+  // const handleAdmin = (id) => {
+  //   setAdmin((prevState) => {
+  //     const tutorsArr = [...prevState];
+  //     tutorsArr[id] = !tutorsArr[id];
+  //     return tutorsArr;
+  //   });
+  // };
   const deleteUser = async (id) => {
     try {
-      await deleteDoc(doc(db, "users", id));
+      await deleteDoc(doc(db, "admin", id));
       const filteed = data.filter((item) => item.id !== id);
       setData(filteed);
-      toast.success("One User deleted");
+      toast.success("One Admin Removed");
       navigate("/admin");
     } catch (error) {
       console.log(error.message);
@@ -60,56 +61,59 @@ const Admin = () => {
         <div className="admin__content">
           <div className="admin_-text"></div>
           <div className="admin__flex">
-            <ImageModal /> <VideoModal /> <FixtureUpload />
+            <ImageModal /> <VideoModal /> <FixtureUpload /> <AddAdmin />
           </div>
         </div>
-        <div className="users-data">
-          <div className="users">
-            <h3>All users present </h3>
-            <TableContainer>
-              <Table variant="striped" colorScheme="gray">
-                <TableCaption>All users present</TableCaption>
-                <Thead sx={{ textAlign: "center" }}>
-                  <Tr>
-                    <Th>Email</Th>
-                    <Th>Fullname</Th>
-                    <Th>Phone Number</Th>
-                    <Th>Action</Th>
-                  </Tr>
-                </Thead>
-                <Tbody sx={{ textAlign: "center" }}>
-                  {data.map((data, index) => {
-                    return (
-                      <Tr key={data.id}>
-                        <Td>{data.email}</Td>
-                        <Td>{data.fullname}</Td>
-                        <Td>{data.phoneNumber}</Td>
-                        <Td>
-                          <Box sx={{ columnGap: "10px", display: "flex" }}>
-                            <Button
+        {data.length === 0 ? (
+          ""
+        ) : (
+          <div className="users-data">
+            <div className="users">
+              <TableContainer>
+                <Table variant="striped" colorScheme="gray">
+                  <TableCaption>All Admin Present</TableCaption>
+                  <Thead sx={{ textAlign: "center" }}>
+                    <Tr>
+                      <Th>Email</Th>
+                      <Th>Fullname</Th>
+                      <Th>Phone Number</Th>
+                      <Th>Action</Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody sx={{ textAlign: "center" }}>
+                    {data.map((data, index) => {
+                      return (
+                        <Tr key={data.id}>
+                          <Td>{data.email}</Td>
+                          <Td>{data.fullname}</Td>
+                          <Td>{data.phoneNumber}</Td>
+                          <Td>
+                            <Box sx={{ columnGap: "10px", display: "flex" }}>
+                              {/* <Button
                               variant={"outline"}
                               colorScheme="twitter"
                               onClick={() => handleAdmin(index)}
                             >
                               {admin[index] ? "Remove user" : "Add user"}
-                            </Button>
-                            <Button
-                              variant={"outline"}
-                              colorScheme="red"
-                              onClick={() => deleteUser(data.id)}
-                            >
-                              Delete User
-                            </Button>
-                          </Box>
-                        </Td>
-                      </Tr>
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </TableContainer>
+                            </Button> */}
+                              <Button
+                                variant={"outline"}
+                                colorScheme="red"
+                                onClick={() => deleteUser(data.id)}
+                              >
+                                Remove Admin
+                              </Button>
+                            </Box>
+                          </Td>
+                        </Tr>
+                      );
+                    })}
+                  </Tbody>
+                </Table>
+              </TableContainer>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </React.Fragment>
   );
