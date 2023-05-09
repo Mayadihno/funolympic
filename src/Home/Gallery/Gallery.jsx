@@ -70,7 +70,7 @@ const Gallery = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const userEmail = user.phoneNumber === "+447774614335";
+        const userEmail = user.email === "niyiolatunji60@gmail.com";
         setAdmin(userEmail);
       }
     });

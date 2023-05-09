@@ -6,11 +6,14 @@ import {
   Flex,
   Stack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Streammer.css";
+import AdminLogin from "../Components/AdminLogin";
 
 const Streamer = () => {
+  const [admin, setadmin] = useState(false);
+  const [other, setOther] = useState(true);
   const navigate = useNavigate();
   const handleLocal = (e) => {
     e.preventDefault();
@@ -19,6 +22,10 @@ const Streamer = () => {
   const handleInter = (e) => {
     e.preventDefault();
     navigate("/login", { replace: true });
+  };
+  const handleAdmin = () => {
+    setadmin(true);
+    setOther(false);
   };
   return (
     <React.Fragment>
@@ -31,40 +38,51 @@ const Streamer = () => {
                 alt=""
               />
             </div>
-            <div className="streamer__card">
-              <Card className="streamer__cards">
-                <CardHeader>
-                  <h4>Streammer Type</h4>
-                </CardHeader>
-                <CardBody className="streammer__body">
-                  <h3>
-                    Before You Sign in we need to confirm Your Nationality
-                  </h3>
-                  <Flex
-                    justifyContent={"center"}
-                    alignItems="center"
-                    pt={"20px"}
-                  >
-                    <Stack direction="row" spacing={4}>
-                      <Button
-                        onClick={handleLocal}
-                        colorScheme="teal"
-                        variant="outline"
-                      >
-                        Local Streamer
-                      </Button>
-                      <Button
-                        onClick={handleInter}
-                        colorScheme="teal"
-                        variant="outline"
-                      >
-                        International Streammer
-                      </Button>
-                    </Stack>
-                  </Flex>
-                </CardBody>
-              </Card>
-            </div>
+            {other ? (
+              <div className="streamer__card">
+                <Card className="streamer__cards">
+                  <CardHeader>
+                    <h4>Streammer Type</h4>
+                  </CardHeader>
+                  <CardBody className="streammer__body">
+                    <h3>
+                      Before You Sign in we need to confirm Your Nationality
+                    </h3>
+                    <Flex
+                      justifyContent={"center"}
+                      alignItems="center"
+                      pt={"20px"}
+                    >
+                      <Stack direction="row" spacing={1}>
+                        <Button
+                          onClick={handleLocal}
+                          colorScheme="teal"
+                          variant="outline"
+                        >
+                          Local Streamer
+                        </Button>
+                        <Button
+                          onClick={handleInter}
+                          colorScheme="teal"
+                          variant="outline"
+                        >
+                          International Streammer
+                        </Button>
+                        <Button
+                          onClick={handleAdmin}
+                          colorScheme="teal"
+                          variant="outline"
+                        >
+                          Login as admin
+                        </Button>
+                      </Stack>
+                    </Flex>
+                  </CardBody>
+                </Card>
+              </div>
+            ) : (
+              <AdminLogin />
+            )}
           </div>
         </div>
       </div>
