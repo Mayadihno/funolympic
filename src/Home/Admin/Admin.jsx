@@ -70,7 +70,7 @@ const Admin = () => {
           <div className="users-data">
             <div className="users">
               <TableContainer>
-                <Table variant="striped" colorScheme="facebook">
+                <Table variant="striped" colorScheme="whatsapp" color={"white"}>
                   <TableCaption>All Admin Present</TableCaption>
                   <Thead sx={{ textAlign: "center" }}>
                     <Tr>
