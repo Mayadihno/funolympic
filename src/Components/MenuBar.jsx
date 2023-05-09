@@ -22,7 +22,7 @@ const MenuBar = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const userEmail =
-          user.email === "niyiolatunji60@gmail.com" || "mayadihno12@gmail.com";
+          user.email === "niyiolatunji60@gmail.com" || "mayadihno120@gmail.com";
         //"+447774614335"
         setAdmin(userEmail);
         setPageState(true);
