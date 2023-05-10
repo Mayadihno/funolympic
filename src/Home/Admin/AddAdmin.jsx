@@ -41,7 +41,7 @@ const AddAdmin = () => {
                 fontSize: "20px",
               }}
             >
-              Add User as admin
+              Add another admin
             </h2>
             <form onSubmit={handleSubmit}>
               <div className="name">
