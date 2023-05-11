@@ -26,6 +26,9 @@
     text-transform: capitalize;
     font-weight: 600;
 }
+.result select option{
+    color: black !important;
+}
 
 @media screen and (max-width:760px) {
     .fixtures__content{

@@ -22,6 +22,7 @@ const AdminLogin = () => {
         setAdmin(userEmail);
         //"+447774614335"
       } else {
+        setAdmin(!admin);
       }
     });
   }, []);

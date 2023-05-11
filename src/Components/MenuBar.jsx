@@ -17,13 +17,10 @@ const MenuBar = () => {
     await signOut(auth);
     navigate("/", { replace: true });
   };
-  //"+447774614335"
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const userEmail =
-          user.email === "niyiolatunji60@gmail.com" || "mayadihno120@gmail.com";
-        //"+447774614335"
+        const userEmail = user.email === "niyiolatunji60@gmail.com";
         setAdmin(userEmail);
         setPageState(true);
       } else {
@@ -78,13 +75,15 @@ const MenuBar = () => {
           >
             Videos
           </NavLink>
-          {admin && (
+          {admin ? (
             <NavLink
               to="/admin"
               className={({ isActive }) => (isActive ? "active-links" : "")}
             >
               Admin
             </NavLink>
+          ) : (
+            ""
           )}
           <Button variant={"outline"} color="white" onClick={handleClick}>
             Sign Out
