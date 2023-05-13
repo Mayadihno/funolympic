@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
+import { toast } from "react-toastify";
 
 const MenuBar = () => {
   const [pageState, setPageState] = useState(false);
@@ -11,6 +12,12 @@ const MenuBar = () => {
 
   const handleLocal = () => {
     navigate("/streammer", { replace: true });
+  };
+  const handleEvent = () => {
+    toast.warning("Login to see live event");
+  };
+  const handleEvents = () => {
+    toast.warning("No Live Event Streaming yet");
   };
   const handleClick = async (e) => {
     e.preventDefault();
@@ -23,6 +30,8 @@ const MenuBar = () => {
         const userEmail = user.email === "niyiolatunji60@gmail.com";
         setAdmin(userEmail);
         setPageState(true);
+        //"niyiolatunji60@gmail.com"
+        //"mayadihno@gmail.com
       } else {
         setPageState(false);
       }
@@ -38,11 +47,8 @@ const MenuBar = () => {
           >
             Olympic News
           </NavLink>
-          <NavLink
-            to="/products"
-            className={({ isActive }) => (isActive ? "active-links" : "")}
-          >
-            Events
+          <NavLink to="/about" onClick={handleEvent}>
+            Live Events
           </NavLink>
           <NavLink
             to="/about"
@@ -63,6 +69,7 @@ const MenuBar = () => {
           >
             Fixtures
           </NavLink>
+          <NavLink onClick={handleEvents}>Live Events</NavLink>
           <NavLink
             to="/gallery"
             className={({ isActive }) => (isActive ? "active-links" : "")}

@@ -21,6 +21,7 @@ const AdminLogin = () => {
         const userEmail = user.email === "niyiolatunji60@gmail.com";
         setAdmin(userEmail);
         //"+447774614335"
+        //"niyiolatunji60@gmail.com"
       } else {
         setAdmin(!admin);
       }

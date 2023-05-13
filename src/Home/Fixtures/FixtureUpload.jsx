@@ -2,6 +2,7 @@ import {
   Button,
   Card,
   CardBody,
+  Input,
   Select,
   Stack,
   Textarea,
@@ -15,6 +16,7 @@ import data from "./fixturesData";
 const FixtureUpload = () => {
   const [category, setCategory] = useState("Choose Sport Category");
   const [fixtures, setFixtures] = useState("");
+  const [date, setDate] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -26,6 +28,7 @@ const FixtureUpload = () => {
     categories: category,
     id: `${Date.now()}`,
     matchFixtures: fixtures,
+    date: date,
     timeStamp: serverTimestamp(),
   };
 
@@ -71,6 +74,14 @@ const FixtureUpload = () => {
                     );
                   })}
               </Select>
+
+              <Input
+                type="date"
+                placeholder="Fixtures Date"
+                onChange={(e) => setDate(e.target.value)}
+                required
+                sx={{ mt: "20px" }}
+              />
 
               <Textarea
                 placeholder="Enter Sport Fixtures"

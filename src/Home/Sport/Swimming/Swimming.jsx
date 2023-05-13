@@ -44,6 +44,15 @@ const Swimming = () => {
     setShow(!show);
   };
 
+  const date = football[0]?.date;
+  const date1 = football[1]?.date;
+  const date2 = football[2]?.date;
+  const date3 = football[3]?.date;
+  const date4 = football[4]?.date;
+  const date5 = football[5]?.date;
+  const date6 = football[6]?.date;
+  const date7 = football[7]?.date;
+
   const fixture1 = football[0]?.matchFixtures;
   const fixture2 = football[1]?.matchFixtures;
   const fixture3 = football[2]?.matchFixtures;
@@ -51,29 +60,7 @@ const Swimming = () => {
   const fixture5 = football[4]?.matchFixtures;
   const fixture6 = football[5]?.matchFixtures;
   const fixture7 = football[6]?.matchFixtures;
-  const fixture8 = football[8]?.matchFixtures;
   const fixture9 = football[9]?.matchFixtures;
-  const fixture10 = football[10]?.matchFixtures;
-  const fixture11 = football[11]?.matchFixtures;
-  const fixture12 = football[12]?.matchFixtures;
-  const fixture13 = football[13]?.matchFixtures;
-  const fixture14 = football[14]?.matchFixtures;
-  const fixture15 = football[15]?.matchFixtures;
-  const fixture16 = football[16]?.matchFixtures;
-  const fixture17 = football[17]?.matchFixtures;
-  const fixture18 = football[18]?.matchFixtures;
-  const fixture19 = football[19]?.matchFixtures;
-  const fixture20 = football[20]?.matchFixtures;
-  const fixture21 = football[21]?.matchFixtures;
-  const fixture22 = football[22]?.matchFixtures;
-  const fixture23 = football[23]?.matchFixtures;
-  const fixture24 = football[24]?.matchFixtures;
-  // const fixture25 = football[25]?.matchFixtures;
-  // const fixture26 = football[26]?.matchFixtures;
-  // const fixture27 = football[27]?.matchFixtures;
-  // const fixture28 = football[28]?.matchFixtures;
-  // const fixture29 = football[29]?.matchFixtures;
-  // const fixture30 = football[30]?.matchFixtures;
 
   useEffect(() => {
     getCategories();
@@ -158,37 +145,94 @@ const Swimming = () => {
                                 "This Match is Not yet Streaming"
                               </small>
                             )}
-                            <p onClick={handleClick}>{fixture1}</p>
-                            <p onClick={handleClick}>{fixture2}</p>
-                            <p onClick={handleClick}>{fixture3}</p>
-                            <p onClick={handleClick}>{fixture4}</p>
-                            <p onClick={handleClick}>{fixture5}</p>
-                            <p onClick={handleClick}>{fixture6}</p>
-                            <p onClick={handleClick}>{fixture7}</p>
-                            <p onClick={handleClick}>{fixture9}</p>
-                            <p onClick={handleClick}>{fixture10}</p>
-                            <p onClick={handleClick}>{fixture8}</p>
-                            <p onClick={handleClick}>{fixture11}</p>
-                            <p onClick={handleClick}>{fixture12}</p>
-                            <p onClick={handleClick}>{fixture13}</p>
-                            <p onClick={handleClick}>{fixture14}</p>
-                            <p onClick={handleClick}>{fixture15}</p>
-                            <p onClick={handleClick}>{fixture16}</p>
-                            <p onClick={handleClick}>{fixture17}</p>
-                            <p onClick={handleClick}>{fixture18}</p>
-                            <p onClick={handleClick}>{fixture19}</p>
-                            <p onClick={handleClick}>{fixture20}</p>
-                            <p onClick={handleClick}>{fixture21}</p>
-                            <p onClick={handleClick}>{fixture23}</p>
-                            <p onClick={handleClick}>{fixture24}</p>
-                            {/* <p onClick={handleClick}>{fixture25}</p>
-                            <p onClick={handleClick}>{fixture25}</p>
-                            <p onClick={handleClick}>{fixture26}</p>
-                            <p onClick={handleClick}>{fixture27}</p>
-                            <p onClick={handleClick}>{fixture28}</p>
-                            <p onClick={handleClick}>{fixture29}</p>
-                            <p onClick={handleClick}>{fixture30}</p> */}
-                            <p onClick={handleClick}>{fixture22}</p>
+                            <p onClick={handleClick}>
+                              {fixture1}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date}
+                              </span>
+                            </p>
+                            <p onClick={handleClick}>
+                              {fixture2}{" "}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date1}
+                              </span>
+                            </p>
+                            <p onClick={handleClick}>
+                              {fixture3}{" "}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date2}
+                              </span>
+                            </p>
+                            <p onClick={handleClick}>
+                              {fixture4}{" "}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date3}
+                              </span>
+                            </p>
+                            <p onClick={handleClick}>
+                              {fixture5}{" "}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date4}
+                              </span>
+                            </p>
+                            <p onClick={handleClick}>
+                              {fixture6}{" "}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date5}
+                              </span>
+                            </p>
+                            <p onClick={handleClick}>
+                              {fixture7}{" "}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date6}
+                              </span>
+                            </p>
+                            <p onClick={handleClick}>
+                              {fixture9}{" "}
+                              <span
+                                style={{
+                                  marginLeft: "65px",
+                                  fontSize: "12px",
+                                }}
+                              >
+                                {date7}
+                              </span>
+                            </p>
                           </ul>
                         </PopoverBody>
                       ) : (
