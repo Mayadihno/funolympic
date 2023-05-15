@@ -55,11 +55,12 @@ const FixtureUpload = () => {
             <h3>Upload Today Fixtures</h3>
             <p>Choose sport category</p>
             <form onSubmit={handleSubmit}>
-              <select
+              <Select
                 placeholder={category}
                 // value={data.sport}
                 onChange={handleChange}
                 required
+                sx={{backgroundColor:'black',color:'white'}}
               >
                 {data &&
                   data.map((data) => {
@@ -73,7 +74,7 @@ const FixtureUpload = () => {
                       </option>
                     );
                   })}
-              </select>
+              </Select>
 
               <Input
                 type="date"
