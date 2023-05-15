@@ -27,7 +27,7 @@ const MenuBar = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const userEmail = user.email === "mayadihno@gmail.com";
+        const userEmail = user.email === "niyiolatunji60@gmail.com";
         setAdmin(userEmail);
         setPageState(true);
         //"niyiolatunji60@gmail.com"
