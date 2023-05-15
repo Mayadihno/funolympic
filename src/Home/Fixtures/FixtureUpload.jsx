@@ -60,9 +60,6 @@ const FixtureUpload = () => {
                 // value={data.sport}
                 onChange={handleChange}
                 required
-                bg="tomato"
-                borderColor="tomato"
-                color="white"
               >
                 {data &&
                   data.map((data) => {
