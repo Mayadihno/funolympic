@@ -45,7 +45,7 @@ const FixtureUpload = () => {
       <div className="result">
         <Card
           maxW="md"
-          className="card__bg card__width"
+          className="card__width"
           style={{
             width: "400px",
             marginTop: "-50px",
@@ -60,7 +60,7 @@ const FixtureUpload = () => {
                 // value={data.sport}
                 onChange={handleChange}
                 required
-                sx={{backgroundColor:'black',color:'white'}}
+                sx={{ backgroundColor: "black", color: "white" }}
               >
                 {data &&
                   data.map((data) => {
