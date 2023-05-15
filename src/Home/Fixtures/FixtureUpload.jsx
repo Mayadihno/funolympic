@@ -55,7 +55,7 @@ const FixtureUpload = () => {
             <h3>Upload Today Fixtures</h3>
             <p>Choose sport category</p>
             <form onSubmit={handleSubmit}>
-              <Select
+              <select
                 placeholder={category}
                 // value={data.sport}
                 onChange={handleChange}
@@ -73,7 +73,7 @@ const FixtureUpload = () => {
                       </option>
                     );
                   })}
-              </Select>
+              </select>
 
               <Input
                 type="date"
